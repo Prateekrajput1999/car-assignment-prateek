@@ -7,8 +7,8 @@ import DualRangeSlider from './DualRangeSlider';
 import MakeModelFilter from './MakeModelFilter';
 
 const PRICE_MIN = 90000;
-const PRICE_MAX = 3600000;
-const YEAR_MIN = 2010;
+const PRICE_MAX = 5200000;
+const YEAR_MIN = 2000;
 const YEAR_MAX = 2025;
 
 export default function Sidebar() {

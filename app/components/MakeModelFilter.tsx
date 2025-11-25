@@ -1,9 +1,10 @@
 'use client';
 
 import { useState, useMemo } from 'react';
+import { useSelector } from 'react-redux';
 import { ChevronDown, ChevronUp, Search } from 'lucide-react';
 import { useFilters } from '@/app/hooks/useFilters';
-import carListData from '@/carList.json';
+import { RootState } from '@/store';
 
 interface Model {
   model_id: string;
@@ -21,7 +22,7 @@ interface Make {
 export default function MakeModelFilter() {
   const { getFilters, setSearchParams } = useFilters();
   const filters = getFilters();
-  const carList = carListData as Make[];
+  const carList = useSelector((state: RootState) => state.cars.makeModelList) as Make[];
 
   const [searchQuery, setSearchQuery] = useState('');
   const [expandedMakes, setExpandedMakes] = useState<Set<string>>(new Set());
@@ -115,7 +116,12 @@ export default function MakeModelFilter() {
       <div>
         <h4 className="text-sm font-medium text-gray-700 mb-2">All Brands</h4>
         <div className="space-y-1 max-h-96 overflow-y-auto">
-          {filteredCarList.map((make) => {
+          {filteredCarList.length === 0 ? (
+            <div className="text-sm text-gray-500 py-4 text-center">
+              Loading brands...
+            </div>
+          ) : (
+            filteredCarList.map((make) => {
             const isExpanded = expandedMakes.has(make.make);
             const isChecked = isMakeChecked(make.make);
 
@@ -179,7 +185,7 @@ export default function MakeModelFilter() {
                 )}
               </div>
             );
-          })}
+          }))}
         </div>
       </div>
     </div>

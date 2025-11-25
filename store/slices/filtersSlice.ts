@@ -21,14 +21,14 @@ interface FiltersState {
 const initialState: FiltersState = {
   priceRange: {
     min: 90000,
-    max: 3600000,
+    max: 5200000,
     selectedMin: 90000,
-    selectedMax: 3600000,
+    selectedMax: 5200000,
   },
   yearRange: {
-    min: 2010,
+    min: 2000,
     max: 2025,
-    selectedMin: 2010,
+    selectedMin: 2000,
     selectedMax: 2025,
   },
   makes: [],

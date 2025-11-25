@@ -1,6 +1,6 @@
 import { AppDispatch } from "@/store";
 import { fetchCars } from "@/store/slices/carsSlice";
-import { useEffect, useMemo } from "react";
+import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useFilters } from "./useFilters";
 import type {

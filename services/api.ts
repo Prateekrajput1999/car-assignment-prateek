@@ -67,6 +67,32 @@ export interface Car {
   images: string | null;
 }
 
+export interface Model {
+  model_id: string;
+  model: string;
+  count: string;
+}
+
+export interface Make {
+  make: string;
+  make_id: string;
+  count: number;
+  models: Model[];
+}
+
+export interface FilterResponse {
+  displayName: string;
+  name: string;
+  type: string;
+  options?: Make[];
+  selected_min?: string;
+  selected_max?: string;
+  min?: string;
+  max?: string;
+  count?: string;
+  groups?: unknown[];
+}
+
 export interface CarsListResponse {
   allcars: Car[];
   pagination: {
@@ -75,6 +101,7 @@ export interface CarsListResponse {
     per_page: number;
     total_pages: number;
   };
+  filters?: FilterResponse[];
 }
 
 export interface FilterRange {

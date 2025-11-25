@@ -16,8 +16,8 @@ interface FilterValues {
 
 const DEFAULT_VALUES: FilterValues = {
   priceMin: 90000,
-  priceMax: 3600000,
-  yearMin: 2010,
+  priceMax: 5200000,
+  yearMin: 2000,
   yearMax: 2025,
   makes: [],
   models: [],

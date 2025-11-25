@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { getCarsList, Car, CarsListPayload } from "@/services/api";
+import { getCarsList, Car, CarsListPayload, Make } from "@/services/api";
 
 interface CarsState {
   cars: Car[];
@@ -11,6 +11,7 @@ interface CarsState {
   lastPage: number;
   perPage: number;
   hasMore: boolean;
+  makeModelList: Make[];
 }
 
 const initialState: CarsState = {
@@ -23,6 +24,7 @@ const initialState: CarsState = {
   lastPage: 1,
   perPage: 12,
   hasMore: true,
+  makeModelList: [],
 };
 
 export const fetchCars = createAsyncThunk(
@@ -77,6 +79,17 @@ const carsSlice = createSlice({
         state.hasMore =
           action.payload.response.pagination.current_page <
           action.payload.response.pagination.total_pages;
+
+        if (action.payload.response.filters && Array.isArray(action.payload.response.filters)) {
+          const makeFilter = action.payload.response.filters.find(
+            (filter) => filter.name === "make"
+          );
+          if (makeFilter && makeFilter.options && Array.isArray(makeFilter.options)) {
+            if (isFirstPage || state.makeModelList.length === 0) {
+              state.makeModelList = makeFilter.options;
+            }
+          }
+        }
       })
       .addCase(fetchCars.rejected, (state, action) => {
         const isFirstPage = action.meta.arg?.page === 1;
