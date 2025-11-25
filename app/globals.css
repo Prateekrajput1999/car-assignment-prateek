@@ -3,6 +3,8 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --green-primary: #16a34a;
+  --green-hover: #15803d;
 }
 
 @theme inline {
@@ -14,13 +16,74 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #f9fafb;
+    --foreground: #171717;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.range-slider {
+  --range-slider-track-height: 8px;
+  --range-slider-thumb-size: 20px;
+  --range-slider-thumb-border: 2px solid #ffffff;
+  --range-slider-thumb-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.range-slider .range-slider__range {
+  background: linear-gradient(to right, #2dd4bf, #14b8a6);
+  border-radius: 4px;
+}
+
+.range-slider .range-slider__thumb {
+  background: #14b8a6;
+  border: 2px solid #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.range-slider .range-slider__thumb:hover {
+  background: #0d9488;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    to right,
+    #e5e7eb 0%,
+    #f3f4f6 20%,
+    #e5e7eb 40%,
+    #e5e7eb 100%
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite linear;
 }

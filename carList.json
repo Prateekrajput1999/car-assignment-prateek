@@ -1,0 +1,1038 @@
+[
+  {
+    "make": "Maruti Suzuki",
+    "make_id": "42",
+    "count": 250,
+    "models": [
+      {
+        "model_id": "393",
+        "model": "Swift",
+        "count": "60"
+      },
+      {
+        "model_id": "372",
+        "model": "Celerio",
+        "count": "23"
+      },
+      {
+        "model_id": "370",
+        "model": "Baleno",
+        "count": "22"
+      },
+      {
+        "model_id": "399",
+        "model": "Wagon R",
+        "count": "19"
+      },
+      {
+        "model_id": "398",
+        "model": "Vitara Brezza",
+        "count": "17"
+      },
+      {
+        "model_id": "374",
+        "model": "Ciaz",
+        "count": "14"
+      },
+      {
+        "model_id": "377",
+        "model": "Ertiga",
+        "count": "14"
+      },
+      {
+        "model_id": "375",
+        "model": "Dzire",
+        "count": "13"
+      },
+      {
+        "model_id": "388",
+        "model": "Ritz",
+        "count": "13"
+      },
+      {
+        "model_id": "368",
+        "model": "Alto K10",
+        "count": "12"
+      },
+      {
+        "model_id": "376",
+        "model": "Eeco",
+        "count": "6"
+      },
+      {
+        "model_id": "389",
+        "model": "S-Cross",
+        "count": "6"
+      },
+      {
+        "model_id": "394",
+        "model": "Swift Dzire",
+        "count": "6"
+      },
+      {
+        "model_id": "387",
+        "model": "Omni",
+        "count": "5"
+      },
+      {
+        "model_id": "401",
+        "model": "XL6",
+        "count": "4"
+      },
+      {
+        "model_id": "367",
+        "model": "Alto",
+        "count": "3"
+      },
+      {
+        "model_id": "371",
+        "model": "Brezza",
+        "count": "3"
+      },
+      {
+        "model_id": "396",
+        "model": "SX4",
+        "count": "3"
+      },
+      {
+        "model_id": "369",
+        "model": "A-Star",
+        "count": "2"
+      },
+      {
+        "model_id": "383",
+        "model": "Ignis",
+        "count": "2"
+      },
+      {
+        "model_id": "373",
+        "model": "Celerio X",
+        "count": "1"
+      },
+      {
+        "model_id": "381",
+        "model": "Grand Vitara",
+        "count": "1"
+      },
+      {
+        "model_id": "391",
+        "model": "S-Presso",
+        "count": "1"
+      }
+    ]
+  },
+  {
+    "make": "Hyundai",
+    "make_id": "29",
+    "count": 218,
+    "models": [
+      {
+        "model_id": "243",
+        "model": "i20",
+        "count": "50"
+      },
+      {
+        "model_id": "230",
+        "model": "Creta",
+        "count": "33"
+      },
+      {
+        "model_id": "258",
+        "model": "Verna",
+        "count": "32"
+      },
+      {
+        "model_id": "242",
+        "model": "i10",
+        "count": "27"
+      },
+      {
+        "model_id": "240",
+        "model": "Grand i10",
+        "count": "22"
+      },
+      {
+        "model_id": "256",
+        "model": "Venue",
+        "count": "11"
+      },
+      {
+        "model_id": "234",
+        "model": "Eon",
+        "count": "7"
+      },
+      {
+        "model_id": "260",
+        "model": "Xcent",
+        "count": "7"
+      },
+      {
+        "model_id": "233",
+        "model": "Elite i20",
+        "count": "6"
+      },
+      {
+        "model_id": "250",
+        "model": "Santro Xing",
+        "count": "5"
+      },
+      {
+        "model_id": "226",
+        "model": "Accent",
+        "count": "4"
+      },
+      {
+        "model_id": "241",
+        "model": "Grand i10 Nios",
+        "count": "4"
+      },
+      {
+        "model_id": "244",
+        "model": "i20 Active",
+        "count": "2"
+      },
+      {
+        "model_id": "249",
+        "model": "Santro",
+        "count": "2"
+      },
+      {
+        "model_id": "228",
+        "model": "Alcazar",
+        "count": "1"
+      },
+      {
+        "model_id": "232",
+        "model": "Elantra",
+        "count": "1"
+      },
+      {
+        "model_id": "235",
+        "model": "Exter",
+        "count": "1"
+      },
+      {
+        "model_id": "236",
+        "model": "Fluidic Verna 4S",
+        "count": "1"
+      },
+      {
+        "model_id": "248",
+        "model": "Santa Fe",
+        "count": "1"
+      },
+      {
+        "model_id": "257",
+        "model": "Venue N Line",
+        "count": "1"
+      }
+    ]
+  },
+  {
+    "make": "Honda",
+    "make_id": "26",
+    "count": 90,
+    "models": [
+      {
+        "model_id": "209",
+        "model": "City",
+        "count": "32"
+      },
+      {
+        "model_id": "219",
+        "model": "Jazz",
+        "count": "15"
+      },
+      {
+        "model_id": "206",
+        "model": "Amaze",
+        "count": "14"
+      },
+      {
+        "model_id": "207",
+        "model": "Brio",
+        "count": "12"
+      },
+      {
+        "model_id": "214",
+        "model": "Civic",
+        "count": "8"
+      },
+      {
+        "model_id": "222",
+        "model": "WR-V",
+        "count": "5"
+      },
+      {
+        "model_id": "220",
+        "model": "Mobilio",
+        "count": "2"
+      },
+      {
+        "model_id": "205",
+        "model": "Accord",
+        "count": "1"
+      },
+      {
+        "model_id": "216",
+        "model": "CR-V",
+        "count": "1"
+      }
+    ]
+  },
+  {
+    "make": "Toyota",
+    "make_id": "70",
+    "count": 81,
+    "models": [
+      {
+        "model_id": "673",
+        "model": "Innova",
+        "count": "25"
+      },
+      {
+        "model_id": "668",
+        "model": "Fortuner",
+        "count": "21"
+      },
+      {
+        "model_id": "674",
+        "model": "Innova Crysta",
+        "count": "15"
+      },
+      {
+        "model_id": "670",
+        "model": "Glanza",
+        "count": "5"
+      },
+      {
+        "model_id": "664",
+        "model": "Etios",
+        "count": "4"
+      },
+      {
+        "model_id": "666",
+        "model": "Etios Liva",
+        "count": "3"
+      },
+      {
+        "model_id": "654",
+        "model": "Corolla",
+        "count": "2"
+      },
+      {
+        "model_id": "655",
+        "model": "Corolla Altis",
+        "count": "2"
+      },
+      {
+        "model_id": "675",
+        "model": "Innova Hycross",
+        "count": "2"
+      },
+      {
+        "model_id": "651",
+        "model": "Camry",
+        "count": "1"
+      },
+      {
+        "model_id": "665",
+        "model": "Etios Cross",
+        "count": "1"
+      }
+    ]
+  },
+  {
+    "make": "Mahindra",
+    "make_id": "39",
+    "count": 76,
+    "models": [
+      {
+        "model_id": "358",
+        "model": "XUV500",
+        "count": "39"
+      },
+      {
+        "model_id": "349",
+        "model": "Thar",
+        "count": "11"
+      },
+      {
+        "model_id": "345",
+        "model": "Scorpio",
+        "count": "8"
+      },
+      {
+        "model_id": "338",
+        "model": "KUV100",
+        "count": "5"
+      },
+      {
+        "model_id": "332",
+        "model": "Bolero",
+        "count": "4"
+      },
+      {
+        "model_id": "340",
+        "model": "Marazzo",
+        "count": "3"
+      },
+      {
+        "model_id": "359",
+        "model": "XUV700",
+        "count": "2"
+      },
+      {
+        "model_id": "348",
+        "model": "Scorpio N",
+        "count": "1"
+      },
+      {
+        "model_id": "351",
+        "model": "Verito",
+        "count": "1"
+      },
+      {
+        "model_id": "354",
+        "model": "XUV300",
+        "count": "1"
+      },
+      {
+        "model_id": "360",
+        "model": "Xylo",
+        "count": "1"
+      }
+    ]
+  },
+  {
+    "make": "Volkswagen",
+    "make_id": "71",
+    "count": 71,
+    "models": [
+      {
+        "model_id": "705",
+        "model": "Polo",
+        "count": "46"
+      },
+      {
+        "model_id": "712",
+        "model": "Vento",
+        "count": "20"
+      },
+      {
+        "model_id": "697",
+        "model": "Ameo",
+        "count": "2"
+      },
+      {
+        "model_id": "706",
+        "model": "Taigun",
+        "count": "2"
+      },
+      {
+        "model_id": "713",
+        "model": "Virtus",
+        "count": "1"
+      }
+    ]
+  },
+  {
+    "make": "Tata",
+    "make_id": "69",
+    "count": 48,
+    "models": [
+      {
+        "model_id": "618",
+        "model": "Nexon",
+        "count": "15"
+      },
+      {
+        "model_id": "616",
+        "model": "Nano",
+        "count": "9"
+      },
+      {
+        "model_id": "601",
+        "model": "Harrier",
+        "count": "5"
+      },
+      {
+        "model_id": "608",
+        "model": "Indica Vista",
+        "count": "3"
+      },
+      {
+        "model_id": "624",
+        "model": "Safari",
+        "count": "3"
+      },
+      {
+        "model_id": "635",
+        "model": "Tiago",
+        "count": "3"
+      },
+      {
+        "model_id": "614",
+        "model": "Manza",
+        "count": "2"
+      },
+      {
+        "model_id": "622",
+        "model": "Punch",
+        "count": "2"
+      },
+      {
+        "model_id": "647",
+        "model": "Zest",
+        "count": "2"
+      },
+      {
+        "model_id": "597",
+        "model": "Altroz",
+        "count": "1"
+      },
+      {
+        "model_id": "604",
+        "model": "Indica",
+        "count": "1"
+      },
+      {
+        "model_id": "607",
+        "model": "Indica V2",
+        "count": "1"
+      },
+      {
+        "model_id": "626",
+        "model": "Safari Storme",
+        "count": "1"
+      }
+    ]
+  },
+  {
+    "make": "Renault",
+    "make_id": "58",
+    "count": 47,
+    "models": [
+      {
+        "model_id": "555",
+        "model": "Duster",
+        "count": "17"
+      },
+      {
+        "model_id": "559",
+        "model": "Kwid",
+        "count": "12"
+      },
+      {
+        "model_id": "565",
+        "model": "Triber",
+        "count": "5"
+      },
+      {
+        "model_id": "563",
+        "model": "Scala",
+        "count": "4"
+      },
+      {
+        "model_id": "557",
+        "model": "Kiger",
+        "count": "3"
+      },
+      {
+        "model_id": "560",
+        "model": "Lodgy",
+        "count": "3"
+      },
+      {
+        "model_id": "562",
+        "model": "Pulse",
+        "count": "2"
+      },
+      {
+        "model_id": "554",
+        "model": "Captur",
+        "count": "1"
+      }
+    ]
+  },
+  {
+    "make": "Skoda",
+    "make_id": "63",
+    "count": 47,
+    "models": [
+      {
+        "model_id": "586",
+        "model": "Rapid",
+        "count": "27"
+      },
+      {
+        "model_id": "578",
+        "model": "Fabia",
+        "count": "7"
+      },
+      {
+        "model_id": "584",
+        "model": "Octavia",
+        "count": "6"
+      },
+      {
+        "model_id": "589",
+        "model": "Superb",
+        "count": "3"
+      },
+      {
+        "model_id": "582",
+        "model": "Kushaq",
+        "count": "2"
+      },
+      {
+        "model_id": "583",
+        "model": "Laura",
+        "count": "2"
+      }
+    ]
+  },
+  {
+    "make": "Ford",
+    "make_id": "22",
+    "count": 43,
+    "models": [
+      {
+        "model_id": "192",
+        "model": "Figo",
+        "count": "15"
+      },
+      {
+        "model_id": "187",
+        "model": "EcoSport",
+        "count": "14"
+      },
+      {
+        "model_id": "184",
+        "model": "Aspire",
+        "count": "4"
+      },
+      {
+        "model_id": "190",
+        "model": "Fiesta",
+        "count": "3"
+      },
+      {
+        "model_id": "191",
+        "model": "Fiesta Classic",
+        "count": "3"
+      },
+      {
+        "model_id": "188",
+        "model": "Endeavour",
+        "count": "2"
+      },
+      {
+        "model_id": "186",
+        "model": "Classic",
+        "count": "1"
+      },
+      {
+        "model_id": "193",
+        "model": "Freestyle",
+        "count": "1"
+      }
+    ]
+  },
+  {
+    "make": "Kia",
+    "make_id": "34",
+    "count": 23,
+    "models": [
+      {
+        "model_id": "289",
+        "model": "Sonet",
+        "count": "12"
+      },
+      {
+        "model_id": "287",
+        "model": "Seltos",
+        "count": "7"
+      },
+      {
+        "model_id": "284",
+        "model": "Carens",
+        "count": "3"
+      },
+      {
+        "model_id": "285",
+        "model": "Carnival",
+        "count": "1"
+      }
+    ]
+  },
+  {
+    "make": "Chevrolet",
+    "make_id": "11",
+    "count": 20,
+    "models": [
+      {
+        "model_id": "104",
+        "model": "Beat",
+        "count": "12"
+      },
+      {
+        "model_id": "108",
+        "model": "Cruze",
+        "count": "2"
+      },
+      {
+        "model_id": "116",
+        "model": "Sail",
+        "count": "2"
+      },
+      {
+        "model_id": "120",
+        "model": "Spark",
+        "count": "2"
+      },
+      {
+        "model_id": "109",
+        "model": "Enjoy",
+        "count": "1"
+      },
+      {
+        "model_id": "113",
+        "model": "Optra",
+        "count": "1"
+      }
+    ]
+  },
+  {
+    "make": "Nissan",
+    "make_id": "52",
+    "count": 18,
+    "models": [
+      {
+        "model_id": "529",
+        "model": "Sunny",
+        "count": "6"
+      },
+      {
+        "model_id": "522",
+        "model": "Micra",
+        "count": "5"
+      },
+      {
+        "model_id": "531",
+        "model": "Terrano",
+        "count": "5"
+      },
+      {
+        "model_id": "521",
+        "model": "Magnite",
+        "count": "1"
+      },
+      {
+        "model_id": "530",
+        "model": "Teana",
+        "count": "1"
+      }
+    ]
+  },
+  {
+    "make": "Fiat",
+    "make_id": "20",
+    "count": 17,
+    "models": [
+      {
+        "model_id": "174",
+        "model": "Punto",
+        "count": "12"
+      },
+      {
+        "model_id": "165",
+        "model": "Linea",
+        "count": "5"
+      }
+    ]
+  },
+  {
+    "make": "BMW",
+    "make_id": "6",
+    "count": 14,
+    "models": [
+      {
+        "model_id": "56",
+        "model": "3 Series",
+        "count": "8"
+      },
+      {
+        "model_id": "80",
+        "model": "X1",
+        "count": "2"
+      },
+      {
+        "model_id": "81",
+        "model": "X3",
+        "count": "2"
+      },
+      {
+        "model_id": "59",
+        "model": "5 Series",
+        "count": "1"
+      },
+      {
+        "model_id": "64",
+        "model": "7 Series",
+        "count": "1"
+      }
+    ]
+  },
+  {
+    "make": "Audi",
+    "make_id": "3",
+    "count": 11,
+    "models": [
+      {
+        "model_id": "27",
+        "model": "Q3",
+        "count": "4"
+      },
+      {
+        "model_id": "16",
+        "model": "A4",
+        "count": "3"
+      },
+      {
+        "model_id": "29",
+        "model": "Q5",
+        "count": "2"
+      },
+      {
+        "model_id": "19",
+        "model": "A6",
+        "count": "1"
+      },
+      {
+        "model_id": "30",
+        "model": "Q7",
+        "count": "1"
+      }
+    ]
+  },
+  {
+    "make": "Mercedes-Benz",
+    "make_id": "47",
+    "count": 10,
+    "models": [
+      {
+        "model_id": "440",
+        "model": "C-Class",
+        "count": "4"
+      },
+      {
+        "model_id": "421",
+        "model": "200",
+        "count": "2"
+      },
+      {
+        "model_id": "422",
+        "model": "A-Class",
+        "count": "1"
+      },
+      {
+        "model_id": "439",
+        "model": "B-Class",
+        "count": "1"
+      },
+      {
+        "model_id": "446",
+        "model": "E-Class",
+        "count": "1"
+      },
+      {
+        "model_id": "458",
+        "model": "GLC",
+        "count": "1"
+      }
+    ]
+  },
+  {
+    "make": "MG",
+    "make_id": "48",
+    "count": 6,
+    "models": [
+      {
+        "model_id": "485",
+        "model": "Hector",
+        "count": "4"
+      },
+      {
+        "model_id": "482",
+        "model": "Astor",
+        "count": "1"
+      },
+      {
+        "model_id": "486",
+        "model": "Hector Plus",
+        "count": "1"
+      }
+    ]
+  },
+  {
+    "make": "Datsun",
+    "make_id": "15",
+    "count": 5,
+    "models": [
+      {
+        "model_id": "137",
+        "model": "redi-GO",
+        "count": "4"
+      },
+      {
+        "model_id": "134",
+        "model": "GO",
+        "count": "1"
+      }
+    ]
+  },
+  {
+    "make": "Jeep",
+    "make_id": "33",
+    "count": 5,
+    "models": [
+      {
+        "model_id": "278",
+        "model": "Compass",
+        "count": "5"
+      }
+    ]
+  },
+  {
+    "make": "Mitsubishi",
+    "make_id": "50",
+    "count": 4,
+    "models": [
+      {
+        "model_id": "503",
+        "model": "Montero",
+        "count": "1"
+      },
+      {
+        "model_id": "504",
+        "model": "Outlander",
+        "count": "1"
+      },
+      {
+        "model_id": "505",
+        "model": "Pajero",
+        "count": "1"
+      },
+      {
+        "model_id": "506",
+        "model": "Pajero Sport",
+        "count": "1"
+      }
+    ]
+  },
+  {
+    "make": "Volvo",
+    "make_id": "72",
+    "count": 3,
+    "models": [
+      {
+        "model_id": "716",
+        "model": "S60",
+        "count": "1"
+      },
+      {
+        "model_id": "718",
+        "model": "S90",
+        "count": "1"
+      },
+      {
+        "model_id": "725",
+        "model": "XC60",
+        "count": "1"
+      }
+    ]
+  },
+  {
+    "make": "Jaguar",
+    "make_id": "32",
+    "count": 2,
+    "models": [
+      {
+        "model_id": "273",
+        "model": "XE",
+        "count": "1"
+      },
+      {
+        "model_id": "274",
+        "model": "XF",
+        "count": "1"
+      }
+    ]
+  },
+  {
+    "make": "Land Rover",
+    "make_id": "36",
+    "count": 2,
+    "models": [
+      {
+        "model_id": "308",
+        "model": "Freelander 2",
+        "count": "1"
+      },
+      {
+        "model_id": "309",
+        "model": "Range Rover",
+        "count": "1"
+      }
+    ]
+  },
+  {
+    "make": "Citroen",
+    "make_id": "13",
+    "count": 1,
+    "models": [
+      {
+        "model_id": "127",
+        "model": "C3",
+        "count": "1"
+      }
+    ]
+  },
+  {
+    "make": "Isuzu",
+    "make_id": "31",
+    "count": 1,
+    "models": [
+      {
+        "model_id": "269",
+        "model": "V-Cross",
+        "count": "1"
+      }
+    ]
+  },
+  {
+    "make": "Mahindra-Renault",
+    "make_id": "40",
+    "count": 1,
+    "models": [
+      {
+        "model_id": "361",
+        "model": "Logan",
+        "count": "1"
+      }
+    ]
+  },
+  {
+    "make": "MINI",
+    "make_id": "49",
+    "count": 1,
+    "models": [
+      {
+        "model_id": "489",
+        "model": "Cooper",
+        "count": "1"
+      }
+    ]
+  }
+]
