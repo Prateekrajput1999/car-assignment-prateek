@@ -1,22 +1,36 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { Minus, Plus } from 'lucide-react';
-import { useFilters } from '@/app/hooks/useFilters';
+import { useDispatch, useSelector } from 'react-redux';
+import { AppDispatch, RootState } from '@/store';
+import { setPriceRange, setYearRange } from '@/store/slices/carsSlice';
 import DualRangeSlider from './DualRangeSlider';
 import MakeModelFilter from './MakeModelFilter';
 
-const PRICE_MIN = 90000;
-const PRICE_MAX = 5200000;
-const YEAR_MIN = 2000;
-const YEAR_MAX = 2025;
-
 export default function Sidebar() {
-  const { getFilters, setSearchParams } = useFilters();
-  const filters = getFilters();
+  const dispatch = useDispatch<AppDispatch>();
+  const apiFilters = useSelector((state: RootState) => state.cars.apiFilters);
+  const minPrice = useSelector((state: RootState) => state.cars.minPrice);
+  const maxPrice = useSelector((state: RootState) => state.cars.maxPrice);
+  const minYear = useSelector((state: RootState) => state.cars.minYear);
+  const maxYear = useSelector((state: RootState) => state.cars.maxYear);
 
-  const priceMin = filters.priceMin;
-  const priceMax = filters.priceMax;
+  // Get price and year filters from apiFilters
+  const priceFilter = useMemo(() => apiFilters.find((f) => f.name === "price"), [apiFilters]);
+  const yearFilter = useMemo(() => apiFilters.find((f) => f.name === "year"), [apiFilters]);
+
+  // Use min/max as defaults when selected values are null
+  const priceMin = priceFilter ? (parseInt(priceFilter.selected_min, 10) || minPrice || 0) : (minPrice || 0);
+  const priceMax = priceFilter ? (parseInt(priceFilter.selected_max, 10) || maxPrice || 0) : (maxPrice || 0);
+  const yearMin = yearFilter ? (parseInt(yearFilter.selected_min, 10) || minYear || 0) : (minYear || 0);
+  const yearMax = yearFilter ? (parseInt(yearFilter.selected_max, 10) || maxYear || 0) : (maxYear || 0);
+
+  // Use max allowed range from CarState
+  const priceRangeMin = minPrice;
+  const priceRangeMax = maxPrice;
+  const yearRangeMin = minYear;
+  const yearRangeMax = maxYear;
 
   const isCheckedPrice = (label: string) => {
     if (label === 'Under 3 Lakh') {
@@ -62,10 +76,10 @@ export default function Sidebar() {
   ];
 
   const handlePriceCategoryClick = (min: number, max: number) => {
-    setSearchParams({
-      priceMin: min,
-      priceMax: max === Infinity ? PRICE_MAX : max,
-    });
+    dispatch(setPriceRange({
+      selectedMin: min,
+      selectedMax: max === Infinity ? (priceRangeMax ?? 0) : max,
+    }));
   };
 
   return (
@@ -82,19 +96,16 @@ export default function Sidebar() {
             <Plus className="w-4 h-4 text-gray-600" />
           )}
         </div>
-        {expandedSections.price && (
+        {expandedSections.price && priceRangeMin !== null && priceRangeMax !== null && (
           <div className="space-y-4">
             <DualRangeSlider
-              rangeMin={PRICE_MIN}
-              rangeMax={PRICE_MAX}
-              min={filters.priceMin}
-              max={filters.priceMax}
+              rangeMin={priceRangeMin}
+              rangeMax={priceRangeMax}
+              min={priceMin}
+              max={priceMax}
               step={50000}
               onChange={(min, max) => {
-                setSearchParams({
-                  priceMin: min,
-                  priceMax: max,
-                });
+                dispatch(setPriceRange({ selectedMin: min, selectedMax: max }));
               }}
               formatValue={(value) => `₹ ${value.toLocaleString('en-IN')}`}
             />
@@ -150,18 +161,15 @@ export default function Sidebar() {
             <Plus className="w-4 h-4 text-gray-600" />
           )}
         </div>
-        {expandedSections.year && (
+        {expandedSections.year && yearRangeMin !== null && yearRangeMax !== null && (
           <DualRangeSlider
-            rangeMin={YEAR_MIN}
-            rangeMax={YEAR_MAX}
-            min={filters.yearMin}
-            max={filters.yearMax}
+            rangeMin={yearRangeMin}
+            rangeMax={yearRangeMax}
+            min={yearMin}
+            max={yearMax}
             step={1}
             onChange={(min, max) => {
-              setSearchParams({
-                yearMin: min,
-                yearMax: max,
-              });
+              dispatch(setYearRange({ selectedMin: min, selectedMax: max }));
             }}
           />
         )}

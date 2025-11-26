@@ -10,7 +10,6 @@ import Sidebar from "./components/Sidebar";
 import CarGrid from "./components/CarGrid";
 import SortModal from "./components/SortModal";
 import CityModal from "./components/CityModal";
-import FilterPills from "./components/FilterPills";
 import useGetCars from "./hooks/useGetCars";
 import { useFilters } from "./hooks/useFilters";
 
@@ -22,7 +21,7 @@ export default function Home() {
   const { cities } = useSelector((state: RootState) => state.cities);
   const { total } = useSelector((state: RootState) => state.cars);
   const { getFilters } = useFilters();
-  const { sortBy, sortOrder, cityId } = getFilters();
+  const { sortBy, sortOrder, cityId } = getFilters(); // cityId comes from URL params
 
   useEffect(() => {
     dispatch(fetchCities());
@@ -53,8 +52,6 @@ export default function Home() {
           <Sidebar />
         </aside>
         <main className="flex-1 p-4 lg:p-6">
-          <FilterPills />
-
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
             <h1 className="text-xl sm:text-2xl font-bold text-gray-900">
               {total} Used cars in {selectedCity?.city_name || "your city"}

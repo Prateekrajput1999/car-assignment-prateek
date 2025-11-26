@@ -1,15 +1,18 @@
 "use client";
 
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { MapPin, ChevronDown } from "lucide-react";
-import { RootState } from "@/store/index";
+import { RootState, AppDispatch } from "@/store/index";
 import { useFilters } from "@/app/hooks/useFilters";
+import { useEffect } from "react";
+import { resetPriceYearRanges } from "@/store/slices/carsSlice";
 
 interface HeaderProps {
   onCityClick?: () => void;
 }
 
 export default function Header({ onCityClick }: HeaderProps) {
+  const dispatch = useDispatch<AppDispatch>();
   const { cities } = useSelector((state: RootState) => state.cities);
   const { getFilters } = useFilters();
   const { cityId } = getFilters();
@@ -17,6 +20,10 @@ export default function Header({ onCityClick }: HeaderProps) {
   const selectedCity = cityId
     ? cities.find((city) => city.city_id === cityId) || null
     : null;
+
+  useEffect(() => {
+    dispatch(resetPriceYearRanges());
+  }, [selectedCity?.city_id, dispatch])
 
   return (
     <header className="bg-white border-b border-gray-200 sticky top-0 z-50">

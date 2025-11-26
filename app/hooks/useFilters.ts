@@ -1,11 +1,13 @@
 import { useSearchParams, useRouter, usePathname } from 'next/navigation';
 import { useCallback } from 'react';
+import { useSelector } from 'react-redux';
+import { RootState } from '@/store';
 
 interface FilterValues {
-  priceMin: number;
-  priceMax: number;
-  yearMin: number;
-  yearMax: number;
+  priceMin: number | null;
+  priceMax: number | null;
+  yearMin: number | null;
+  yearMax: number | null;
   makes: string[];
   models: string[];
   cityId: string | null;
@@ -14,16 +16,10 @@ interface FilterValues {
   page: number;
 }
 
-const DEFAULT_VALUES: FilterValues = {
-  priceMin: 90000,
-  priceMax: 5200000,
-  yearMin: 2000,
-  yearMax: 2025,
-  makes: [],
-  models: [],
+const DEFAULT_VALUES = {
   cityId: null,
   sortBy: null,
-  sortOrder: null,
+  sortOrder: null as 'asc' | 'desc' | null,
   page: 1,
 };
 
@@ -31,16 +27,19 @@ export const useFilters = () => {
   const searchParams = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
+  
+  // Get filter values from apiFilters
+  const apiFilters = useSelector((state: RootState) => state.cars.apiFilters);
+  const makes = useSelector((state: RootState) => state.cars.makes);
+  const models = useSelector((state: RootState) => state.cars.models);
 
   const setSearchParams = useCallback(
-    (updates: Partial<Record<keyof FilterValues, string | number | string[] | null>>) => {
+    (updates: Partial<Record<'cityId' | 'sortBy' | 'sortOrder', string | null>>) => {
       const params = new URLSearchParams(searchParams.toString());
       
       Object.entries(updates).forEach(([key, value]) => {
-        if (value === null || value === undefined || (Array.isArray(value) && value.length === 0)) {
+        if (value === null || value === undefined) {
           params.delete(key);
-        } else if (Array.isArray(value)) {
-          params.set(key, value.join(','));
         } else {
           params.set(key, String(value));
         }
@@ -52,22 +51,21 @@ export const useFilters = () => {
   );
 
   const getFilters = useCallback((): FilterValues => {
-    const priceMin = parseInt(searchParams.get('priceMin') || String(DEFAULT_VALUES.priceMin), 10);
-    const priceMax = parseInt(searchParams.get('priceMax') || String(DEFAULT_VALUES.priceMax), 10);
-    const yearMin = parseInt(searchParams.get('yearMin') || String(DEFAULT_VALUES.yearMin), 10);
-    const yearMax = parseInt(searchParams.get('yearMax') || String(DEFAULT_VALUES.yearMax), 10);
-    const makes = searchParams.get('makes')?.split(',').filter(Boolean) || DEFAULT_VALUES.makes;
-    const models = searchParams.get('models')?.split(',').filter(Boolean) || DEFAULT_VALUES.models;
+    // Only get cityId and sort from URL params
     const cityId = searchParams.get('cityId') || DEFAULT_VALUES.cityId;
     const sortBy = searchParams.get('sortBy') || DEFAULT_VALUES.sortBy;
     const sortOrder = (searchParams.get('sortOrder') as 'asc' | 'desc') || DEFAULT_VALUES.sortOrder;
     const page = parseInt(searchParams.get('page') || String(DEFAULT_VALUES.page), 10);
 
+    // Get everything else from apiFilters
+    const priceFilter = apiFilters.find((f) => f.name === "price");
+    const yearFilter = apiFilters.find((f) => f.name === "year");
+
     return {
-      priceMin,
-      priceMax,
-      yearMin,
-      yearMax,
+      priceMin: priceFilter ? parseInt(priceFilter.selected_min, 10) : null,
+      priceMax: priceFilter ? parseInt(priceFilter.selected_max, 10) : null,
+      yearMin: yearFilter ? parseInt(yearFilter.selected_min, 10) : null,
+      yearMax: yearFilter ? parseInt(yearFilter.selected_max, 10) : null,
       makes,
       models,
       cityId,
@@ -75,7 +73,7 @@ export const useFilters = () => {
       sortOrder,
       page,
     };
-  }, [searchParams]);
+  }, [searchParams, apiFilters, makes, models]);
 
   return { searchParams, setSearchParams, getFilters };
 };

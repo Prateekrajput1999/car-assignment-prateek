@@ -14,7 +14,7 @@ export function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  const defaultCityId = "94";
+  const defaultCityId = "86";
 
   const url = request.nextUrl.clone();
   url.searchParams.set("cityId", defaultCityId);

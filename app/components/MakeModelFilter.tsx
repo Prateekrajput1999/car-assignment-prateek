@@ -1,10 +1,10 @@
 'use client';
 
 import { useState, useMemo } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { ChevronDown, ChevronUp, Search } from 'lucide-react';
-import { useFilters } from '@/app/hooks/useFilters';
-import { RootState } from '@/store';
+import { AppDispatch, RootState } from '@/store';
+import { setMakes, setModels } from '@/store/slices/carsSlice';
 
 interface Model {
   model_id: string;
@@ -20,8 +20,9 @@ interface Make {
 }
 
 export default function MakeModelFilter() {
-  const { getFilters, setSearchParams } = useFilters();
-  const filters = getFilters();
+  const dispatch = useDispatch<AppDispatch>();
+  const makes = useSelector((state: RootState) => state.cars.makes);
+  const models = useSelector((state: RootState) => state.cars.models);
   const carList = useSelector((state: RootState) => state.cars.makeModelList) as Make[];
 
   const [searchQuery, setSearchQuery] = useState('');
@@ -64,40 +65,34 @@ export default function MakeModelFilter() {
 
   const handleMakeCheckboxChange = (make: string, checked: boolean) => {
     if (checked) {
-      setSearchParams({
-        makes: [...filters.makes, make],
-      });
+      dispatch(setMakes([...makes, make]));
     } else {
-      setSearchParams({
-        makes: filters.makes.filter((m) => m !== make),
-        models: filters.models.filter((model) => {
-          const makeData = carList.find((m) => m.make === make);
-          return makeData
-            ? !makeData.models.some((m) => m.model === model)
-            : true;
-        }),
-      });
+      dispatch(setMakes(makes.filter((m) => m !== make)));
+      // Also remove models that belong to this make
+      const makeData = carList.find((m) => m.make === make);
+      if (makeData) {
+        const modelsToKeep = models.filter((model) =>
+          !makeData.models.some((m) => m.model === model)
+        );
+        dispatch(setModels(modelsToKeep));
+      }
     }
   };
 
   const handleModelCheckboxChange = (model: string, checked: boolean) => {
     if (checked) {
-      setSearchParams({
-        models: [...filters.models, model],
-      });
+      dispatch(setModels([...models, model]));
     } else {
-      setSearchParams({
-        models: filters.models.filter((m) => m !== model),
-      });
+      dispatch(setModels(models.filter((m) => m !== model)));
     }
   };
 
   const isMakeChecked = (make: string) => {
-    return filters.makes.includes(make);
+    return makes.includes(make);
   };
 
   const isModelChecked = (model: string) => {
-    return filters.models.includes(model);
+    return models.includes(model);
   };
 
   return (

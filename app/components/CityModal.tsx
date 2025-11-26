@@ -24,6 +24,7 @@ export default function CityModal({ isOpen, onClose }: CityModalProps) {
   );
 
   const handleCitySelect = (city: City) => {
+    // cityId is stored in URL params
     setSearchParams({
       cityId: city.city_id,
     });
